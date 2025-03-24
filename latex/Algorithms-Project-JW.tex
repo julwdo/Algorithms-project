@@ -239,7 +239,7 @@ A straightforward approach to frequent itemset mining on this dataset would be t
 
 \noindent Based on this assumption, the frequent itemset mining problem was reframed to focus on identifying books that were frequently \textit{liked} together.
 
-To align with this new formulation, the dataset was refined by renaming variables as follows: Id $\rightarrow$ book\_id, Title $\rightarrow$ book\_title, User\_id $\rightarrow$ user\_id, and review/score $\rightarrow$ rating. Only these four variables were retained for further analysis. Two of them were found to contain missing values, as summarized in Table \ref{tab:2}.
+To align with this new formulation, the dataset was refined by renaming variables as follows: Id $\rightarrow$ book\_id, Title $\rightarrow$ title, User\_id $\rightarrow$ user\_id, and review/score $\rightarrow$ rating. Only these four variables were retained for further analysis. Two of them were found to contain missing values, as summarized in Table \ref{tab:2}.
 
 \begin{table}[!ht]
 \centering
@@ -248,13 +248,13 @@ To align with this new formulation, the dataset was refined by renaming variable
 \caption{Missing Values Count}
 \label{tab:2}
 \begin{tabular}{
->{\raggedright\arraybackslash}p{\widthof{book\_title}}
+>{\raggedright\arraybackslash}p{\widthof{\textbf{Variable}}}
 S[table-format=6]
 }
 \hline
 \textbf{Variable} & \textbf{Count} \\ \hline
 book\_id & 0 \\ \hline
-book\_title & 208 \\ \hline
+title & 208 \\ \hline
 user\_id & 561787 \\ \hline
 rating & 0 \\ \hline
 \end{tabular}
@@ -262,11 +262,11 @@ rating & 0 \\ \hline
 
 \subsection{Preprocessing Steps}
 
-\noindent Since a missing user\_id value prevents associating the book with other books rated by the same user, all reviews without a user\_id were excluded. Additionally, reviews with a missing book\_title, accounting for only 0.007\% of the data, were dropped. After these steps, the dataset was reduced to 2,438,018 rows.
+\noindent Since a missing user\_id value prevents associating the book with other books rated by the same user, all reviews without a user\_id were excluded. Additionally, reviews with a missing book title, accounting for only 0.007\% of the data, were dropped. After these steps, the dataset was reduced to 2,438,018 rows.
 
 Next, reviews were filtered to include only those with a rating of 4 or higher, thereby considering only books that users \textit{liked}. This reduced the dataset to 1,954,329 rows.
 
-It was then observed that some book titles were associated with two or more different book IDs. To resolve this, only unique book\_title-user\_id pairs were kept. This had two effects:
+It was then observed that some book titles were associated with two or more different book IDs. To resolve this, only unique title-user\_id pairs were kept. This had two effects:
 
 \begin{enumerate}
 \item If user X \textit{liked} book A under multiple book IDs, only one pair (user X-book A) was retained.
@@ -275,7 +275,7 @@ It was then observed that some book titles were associated with two or more diff
 
 \noindent Both of these effects were intended, as for the purpose of frequent itemset mining, the focus is on the association between a user and a book, rather than the number of times this relationship occurs. After this step, the dataset was reduced to 1,690,999 rows.
 
-Since the book\_id was no longer accurate, it was replaced with a new integer-based book\_id for each unique book\_title. Additionally, the user\_id was converted to an integer to save memory.
+Since the book\_id was no longer accurate, it was replaced with a new integer-based book\_id for each unique title. Additionally, the user\_id was converted to an integer to save memory.
 
 The remaining columns were renamed as follows: user\_id $\rightarrow$ basket\_id, and book\_id $\rightarrow$ item\_id. This renaming was done to make the analysis more universal by treating the dataset in terms of baskets and items, regardless of their specific context (e.g., users and books).
 
