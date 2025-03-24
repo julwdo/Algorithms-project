@@ -5,6 +5,3 @@ This project implements a parallelized version of the SON algorithm using Apache
 **Frequent Itemsets Mined:** 16,854 (min_support = 0.01%).\
 **Execution Time:** ~4 minutes.\
 **Scalability:** Efficient performance observed with varying dataset sizes, support thresholds, and itemset sizes.
-
-**Google Colab version of the notebook:**
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/julwdo/Algorithms-project/blob/main/Algorithms_Project_JW.ipynb)
