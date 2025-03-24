@@ -1,0 +1,27 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Agrawal and Srikant}{1994}]{agrawal1994fast}
+Agrawal, R. and Srikant, R. (1994).
+\newblock Fast Algorithms for Mining Association Rules.
+\newblock In {\em Proceedings of the 20th International Conference on Very
+  Large Data Bases (VLDB)}, pages 487--499.
+
+\bibitem[\protect\astroncite{Bekheet}{2022}]{amazon_books_reviews}
+Bekheet, M. (2022).
+\newblock \textit{Amazon Books Reviews} [Data set].
+\newblock
+  \url{https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews}.
+
+\bibitem[\protect\astroncite{Leskovec et~al.}{2020}]{Leskovec2020}
+Leskovec, J., Rajaraman, A., and Ullman, J.~D. (2020).
+\newblock {\em Mining of Massive Datasets}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\astroncite{Savasere et~al.}{1995}]{savasere1995efficient}
+Savasere, A., Omiecinski, E., and Navathe, S. (1995).
+\newblock An Efficient Algorithm for Mining Association Rules in Large
+  Databases.
+\newblock In {\em Proceedings of the 21st International Conference on Very
+  Large Data Bases (VLDB)}, pages 432--444.
+
+\end{thebibliography}
