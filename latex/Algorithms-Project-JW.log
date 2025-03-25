@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.28)  24 MAR 2025 20:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.28)  25 MAR 2025 17:14
 entering extended mode
 **./Algorithms-Project-JW.tex
 (Algorithms-Project-JW.tex
@@ -534,7 +534,7 @@ LaTeX Info: Redefining \nameref on input line 29.
 \openout3 = `Algorithms-Project-JW.out'.
 
 \c@lstlisting=\count316
-<logo.png, id=71, 803.0pt x 803.0pt>
+<logo.png, id=63, 803.0pt x 803.0pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 52.
@@ -551,39 +551,40 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.92 \item \texttt
-                  {baskets}: a list of sets, where each set represents a bas...
-[1] [2] [3] [4] [5]
-<n_baskets_vs_execution_time.png, id=168, 495.7722pt x 358.4592pt>
+                  {k\_max}: the maximum itemset size to be found. [1] [2]
+[3] [4] [5]
+<n_baskets_vs_execution_time.png, id=154, 495.7722pt x 358.4592pt>
 File: n_baskets_vs_execution_time.png Graphic file (type png)
 <use n_baskets_vs_execution_time.png>
-Package pdftex.def Info: n_baskets_vs_execution_time.png  used on input line 31
-0.
+Package pdftex.def Info: n_baskets_vs_execution_time.png  used on input line 30
+6.
 (pdftex.def)             Requested size: 338.5863pt x 244.8156pt.
- [6 <./n_baskets_vs_execution_time.png>]
-<min_support_vs_execution_time.png, id=178, 570.933pt x 354.123pt>
+<min_support_vs_execution_time.png, id=156, 570.933pt x 354.123pt>
 File: min_support_vs_execution_time.png Graphic file (type png)
 <use min_support_vs_execution_time.png>
 Package pdftex.def Info: min_support_vs_execution_time.png  used on input line 
-330.
+326.
 (pdftex.def)             Requested size: 338.5863pt x 210.01685pt.
-<k_max_vs_execution_time.png, id=180, 570.933pt x 353.4003pt>
+ [6 <./n_baskets_vs_execution_time.png>]
+<k_max_vs_execution_time.png, id=166, 570.933pt x 353.4003pt>
 File: k_max_vs_execution_time.png Graphic file (type png)
 <use k_max_vs_execution_time.png>
-Package pdftex.def Info: k_max_vs_execution_time.png  used on input line 345.
+Package pdftex.def Info: k_max_vs_execution_time.png  used on input line 341.
 (pdftex.def)             Requested size: 338.5863pt x 209.58824pt.
- [7 <./min_support_vs_execution_time.png> <./k_max_vs_execution_time.png>]
-(Algorithms-Project-JW.bbl) [8] (Algorithms-Project-JW.aux)
+ [7 <./min_support_vs_execution_time.png> <./k_max_vs_execution_time.png>] (Alg
+orithms-Project-JW.bbl)
+[8] (Algorithms-Project-JW.aux)
 Package rerunfilecheck Info: File `Algorithms-Project-JW.out' has not changed.
-(rerunfilecheck)             Checksum: 8C949DF4B800636FAA6AD7DEC25F2F0C;3520.
+(rerunfilecheck)             Checksum: 8CF6428CF15C5B39D04043B1D3A20BC0;3076.
  ) 
 Here is how much of TeX's memory you used:
- 16443 strings out of 478869
- 299049 string characters out of 2860379
- 602334 words of memory out of 3000000
- 34093 multiletter control sequences out of 15000+600000
+ 16433 strings out of 478869
+ 298929 string characters out of 2860379
+ 603338 words of memory out of 3000000
+ 34091 multiletter control sequences out of 15000+600000
  411675 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,11n,81p,803b,826s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,11n,81p,821b,824s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/typ
@@ -598,9 +599,9 @@ r9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/cm-super/sfrm1000.pfb>
-Output written on Algorithms-Project-JW.pdf (9 pages, 523809 bytes).
+Output written on Algorithms-Project-JW.pdf (9 pages, 521358 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
