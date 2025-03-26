@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.28)  26 MAR 2025 13:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.28)  26 MAR 2025 14:04
 entering extended mode
 **./Algorithms-Project-JW.tex
 (Algorithms-Project-JW.tex
@@ -553,19 +553,19 @@ been already used, duplicate ignored
 l.92 \item \texttt
                   {k\_max}: the maximum itemset size to be found. [1] [2]
 [3] [4] [5]
-<n_baskets_vs_execution_time.png, id=145, 495.7722pt x 358.4592pt>
+<n_baskets_vs_execution_time.png, id=146, 495.7722pt x 358.4592pt>
 File: n_baskets_vs_execution_time.png Graphic file (type png)
 <use n_baskets_vs_execution_time.png>
 Package pdftex.def Info: n_baskets_vs_execution_time.png  used on input line 29
 8.
 (pdftex.def)             Requested size: 338.5863pt x 244.8156pt.
-<min_support_vs_execution_time.png, id=147, 570.933pt x 354.123pt>
+<min_support_vs_execution_time.png, id=148, 570.933pt x 354.123pt>
 File: min_support_vs_execution_time.png Graphic file (type png)
 <use min_support_vs_execution_time.png>
 Package pdftex.def Info: min_support_vs_execution_time.png  used on input line 
 318.
 (pdftex.def)             Requested size: 338.5863pt x 210.01685pt.
-<k_max_vs_execution_time.png, id=149, 570.933pt x 353.4003pt>
+<k_max_vs_execution_time.png, id=150, 570.933pt x 353.4003pt>
 File: k_max_vs_execution_time.png Graphic file (type png)
 <use k_max_vs_execution_time.png>
 Package pdftex.def Info: k_max_vs_execution_time.png  used on input line 333.
@@ -577,11 +577,11 @@ Package rerunfilecheck Info: File `Algorithms-Project-JW.out' has not changed.
 (rerunfilecheck)             Checksum: 9B90F3517456BFC8F174E5B92DB94DA3;2764.
  ) 
 Here is how much of TeX's memory you used:
- 16429 strings out of 478869
- 298869 string characters out of 2860379
+ 16431 strings out of 478869
+ 298890 string characters out of 2860379
  604338 words of memory out of 3000000
- 34089 multiletter control sequences out of 15000+600000
- 411675 words of font info for 56 fonts, out of 8000000 for 9000
+ 34090 multiletter control sequences out of 15000+600000
+ 412022 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,11n,81p,790b,845s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Progra
@@ -596,11 +596,12 @@ Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
 amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 r9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/cm-super/sfrm1000.pfb>
-Output written on Algorithms-Project-JW.pdf (9 pages, 519430 bytes).
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
+ic/cm-super/sfrm1000.pfb>
+Output written on Algorithms-Project-JW.pdf (9 pages, 530887 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
+ 253 PDF objects out of 1000 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
