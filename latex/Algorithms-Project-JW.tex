@@ -273,25 +273,25 @@ Baskets containing only one item were excluded, as they cannot contribute to ite
  
 \section{Experimental Results}\label{sec:4}
 
-\subsection{Frequent Itemset Mining Results}
+\subsection{Frequent Pair Mining Results}
 
-SON was applied to this dataset of baskets with a minimum support threshold of 0.01\%, as higher thresholds resulted in very few frequent itemsets. Typically, the support threshold is set much higher (e.g., 1\%), but this dataset had a particular characteristic:\ a large number of distinct books, each \textit{liked} by only a few users. This pattern could partly reflect the dataset’s nature. However, many books appeared under slightly different titles, such as \textit{The Hobbit or There and Back Again} and \textit{The Hobbit; Or, There and Back Again}. Consequently, these variations were treated as separate books, leading to distinct support counts rather than being aggregated.
+The SON algorithm was applied to this collection of baskets. The minimum support threshold was set to 0.01\%, as higher thresholds resulted in very few frequent itemsets. Typically, the support threshold is set much higher, but this dataset had a particular characteristic:\ a large number of unique books, each \textit{liked} by only a few users. This could partly reflect the dataset's nature. However, it was also observed that the same book often appeared under multiple slightly different titles, such as \textit{The Hobbit or There and Back Again} and \textit{The Hobbit; Or, There and Back Again}. As a result, these variations were treated as distinct books, leading to separate support counts rather than being aggregated.
 
-The code was executed on Google Colab, a cloud-based platform providing 12.67 GB of RAM and 2 virtual CPU cores. The number of partitions was fixed at 2, as testing with 4, 8, 16, and 32 partitions led to increased execution time. Based on the number of baskets in each partition and the entire dataset, along with the chosen support threshold, the local and global minimum count thresholds were computed. The maximum itemset size \( k_{\max} \) was set to 2. The execution time was 244.04 seconds (approx.\ 4 minutes and 4 seconds), identifying 7,289 frequent singletons and 9,565 frequent pairs.
+The code was executed on Google Colab, a cloud-based platform providing 12.67 GB of RAM and 2 virtual CPU cores. The number of partitions was set to 2, as testing with 4, 8, 16, 32, and 64 partitions led to increased execution time. Based on the number of baskets in each partition and the entire dataset, along with the chosen support threshold, the local and global minimum count thresholds were calculated. The maximum itemset~size \texttt{k\_max} was set to 2. The execution time was 244.04 seconds (approx.\ 4 minutes and 4 seconds), identifying 7,289 frequent singletons and 9,565 frequent pairs.
 
 Following this, association rule mining was performed with no minimum confidence threshold to retrieve all possible association rules, resulting in 19,130 rules. Rules with negative or zero interest were filtered out, as the focus was on identifying books whose presence among a user's \textit{liked} books increases the likelihood of another book being present. Additionally, rules with confidence of 0.8 or higher were discarded, as further examination revealed that highly confident rules often involved the same book with slight title variations - an issue previously noted. After applying these filters, 10,500 association rules remained.
 
-Finally, a simple recommendation system was implemented. For a randomly chosen book ID from the data, the consequent from the association rule with the highest interest was retrieved. The result was then printed in the following format:\ ``Readers who enjoyed \textit{Emma (Summer Classics)} often also liked \textit{Pride \& Prejudice (New Windmill)}.''
+Finally, a simple recommendation system was implemented. For a book\_id randomly selected from the data, the consequent from the association rule with the highest interest was retrieved. The result was then printed in the following format:\ ``Readers who enjoyed \textit{Emma (Summer Classics)} often also liked \textit{Pride \& Prejudice (New Windmill)}.''
 
 \subsection{Testing Implementation Scalability}
 
-Beyond mining frequent pairs using a fixed minimum support threshold, scalability tests were conducted to assess how the implementation performs under varying dataset sizes, minimum support thresholds, and maximum item- set sizes (\texttt{k\_max}). Execution time was used as the measure of implementation efficiency.
+Beyond mining frequent pairs using a fixed minimum support threshold, scalability tests were conducted to assess how the implementation performs under varying dataset sizes, minimum support thresholds, and maximum item- set sizes. Execution time was used as an indicator of implementation efficiency.
 
 \subsubsection{Effect of Dataset Size on Execution Time}
 
 The first test examined execution time as set of baskets increased. Since no additional data beyond the 221,587 baskets was available, artificial data subsets were created through sampling, either without or with replacement, depending on whether the sampling fraction was less or greater than 1. The following fractions were considered: 0.1, 0.2, 0.4, 0.8, 1.6, 3.2, and 6.4. The minimum support threshold was set to 0.1\%, and \texttt{k\_max} to 2.
 
-Figure \ref{fig:n_baskets_vs_execution_time} shows the results. While the number of baskets approximately doubles at each step, execution time increases by less than a factor of 2 in most cases - for instance, when moving from 709,750 to 1,419,286 baskets, the increase is 1.57. The only exception occurs when increasing from 44,506 to 88,514 baskets, where execution time grows by slightly more than 2. This sublinear scalability suggests that the implementation benefits from the two-phase approach of the SON algorithm and Apache Spark’s parallelization, enabling efficient processing of large-scale data.
+Figure \ref{fig:n_baskets_vs_execution_time} shows the results. While the number of baskets approximately doubles at each step, execution time increases by less than a factor of 2 in most cases - for instance, when moving from 709,750 to 1,419,286 baskets, the increase is 1.57. The only exception occurs when increasing from 44,506 to 88,514 baskets, where execution time grows by slightly more than 2. This sublinear scalability suggests that the implementation benefits from the two-phase approach of the SON algorithm and Apache Spark’s parallelization, enabling efficient processing of large datasets.
 
 \begin{figure}[!ht]
     \centering
@@ -311,7 +311,7 @@ Results presented in Figure \ref{fig:min_support_vs_execution_time} reveal diffe
     \item For large frequent itemset counts (above 25,000 at \( \texttt{min\_support} = 0.000078125 \)), execution time exhibits superlinear growth.  
 \end{itemize}
 
-Although execution time shows superlinear growth for the largest number of frequent itemsets found, the total runtime remains manageable at 459.17 seconds (approx.\ 7 minutes and 39 seconds). This further demonstrates the implementation's ability to efficiently process large-scale data, successfully handling around 200,000 baskets while identifying a substantial number of frequent itemsets, including singletons and pairs, within 8 minutes.
+Although execution time shows superlinear growth for the largest number of frequent itemsets found, the total runtime remains manageable at 459.17 seconds (approx.\ 7 minutes and 39 seconds). This further demonstrates the implementation's ability to efficiently handle large datasets, successfully processing around 200,000 baskets while identifying a substantial number of frequent itemsets, including singletons and pairs, within 8 minutes.
 
 \begin{figure}[!ht]
     \centering
@@ -322,11 +322,11 @@ Although execution time shows superlinear growth for the largest number of frequ
 
 \subsubsection{Effect of Maximum Itemset Size (k\_max) on Execution Time}
 
-The final test evaluated execution time for different values of \texttt{k\_max} while using the full dataset and a fixed min- imum support threshold of 0.1\%. The tested values of \texttt{k\_max} were 2, 3, 4, and 5.  
+The final test examined execution time for different values of \texttt{k\_max} while using the full dataset and a fixed min- imum support threshold of 0.1\%. The tested values of \texttt{k\_max} were 2, 3, 4, and 5.  
 
 Results presented in Figure \ref{fig:k_max_vs_execution_time} indicate that execution time increases approximately linearly with the number of frequent itemsets found when \texttt{k\_max} increases from 2 to 3. Beyond this point, execution time grows slightly superlinearly, with the increase for \( \texttt{k\_max} = 5 \) being 1.5 times the increase in frequent itemsets found.
 
-Despite this, finding frequent 4- and 5-itemsets remains computationally feasible, as even in the largest case, where nearly 9,000 frequent 5-itemsets are identified, execution time remains under 4 minutes.
+Despite this, finding frequent 4- and 5-itemsets remains computationally feasible, as even in the largest case, where nearly 9,000 frequent itemsets, including 5-itemsets, are found, execution time remains under 4 minutes.
 
 \begin{figure}[!ht]
     \centering
@@ -339,11 +339,11 @@ Despite this, finding frequent 4- and 5-itemsets remains computationally feasibl
 
 This project successfully implemented a parallelized version of the SON algorithm using Apache Spark, with~the Apriori algorithm employed for local itemset mining within partitions. The implementation was tested on a da- taset of Amazon book reviews to evaluate its effectiveness and scalability.
 
-Mining for frequent pairs in a collection of 221,587 baskets with a support threshold of 0.01\% took approximately 4 minutes and identified 16,854 frequent itemsets. A subsequent association rule mining step allowed for the discovery of 10,500 rules with positive \textit{interest}, enabling the creation of a simple recommendation system.~In this system, for each book purchased by a user, another book could be suggested in the form of a banner:\ ``Other users often also liked ...''.
+Mining for frequent pairs in a collection of 221,587 baskets with a support threshold of 0.01\% took approximately 4 minutes and identified 16,854 frequent itemsets. A subsequent association rule mining step allowed for the discovery of 10,500 rules with positive interest, enabling the creation of a simple recommendation system.~In this system, for each book purchased by a user, another book could be suggested in the form of a banner:\ ``Other users often also liked ...''.
 
-Further scalability tests demonstrated that execution time scales sublinearly with dataset size, indicating ef- ficient parallelization. When varying the minimum support threshold, execution time remained manageable even when identifying a large number of frequent itemsets, demonstrating the robustness of the approach. However, for extremely low support values, execution time increased superlinearly due to the exponential growth in fre- quent itemsets. Similarly, increasing \( k_{max} \) resulted in an approximately linear increase in execution time for small itemsets, while higher values led to a slightly superlinear increase. Despite this, the implementation re- mained computationally feasible, even for discovering frequent 4- and 5-itemsets.
+Further scalability tests demonstrated that execution time scales sublinearly with dataset size, indicating ef- ficient parallelization. When varying the minimum support threshold, execution time remained manageable even when identifying a large number of frequent itemsets, demonstrating the robustness of the approach. However, for extremely low support values, execution time increased slightly superlinearly due to the exponential growth in frequent itemsets. Similarly, increasing \texttt{k\_max} resulted in an approximately linear increase in execution time for small itemsets, while higher values led to a slightly superlinear increase. Despite this, discovering frequent~4- and 5-itemsets remained computationally feasible.
 
-Overall, the implementation scales well to large datasets and maintains efficiency across different parameter settings. Future improvements could focus on optimizing memory usage, dynamically adjusting partitioning strategies, and integrating more advanced pruning techniques to further improve execution time for low support thresholds and large itemset sizes. Additionally, applying the algorithm to different types of datasets could pro- vide further insights into its performance across various domains.
+Overall, the implementation scales well to large datasets and maintains efficiency across different parameter settings. Future work could aim at optimizing memory usage, dynamically adjusting partitioning strategies,~and integrating more advanced pruning techniques to further improve execution time for low support thresholds and large itemset sizes. Additionally, applying the algorithm to diverse datasets could provide further insights into its performance across various domains.
 
 \printbibliography{references}
 \end{document}

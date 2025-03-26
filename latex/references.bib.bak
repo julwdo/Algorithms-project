@@ -5,7 +5,6 @@
   publisher = {Cambridge University Press},
   title     = {Mining of Massive Datasets},
   year      = {2020},
-  edition   = {3rd},
 }
 
 @InProceedings{agrawal1994fast,
